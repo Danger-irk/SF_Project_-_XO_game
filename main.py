@@ -12,7 +12,7 @@ def greet():
 
 def show():
     print()
-    print("  0 1 2")
+    print("- 0 1 2")
     for i, row in enumerate(field):
         row_str = f"{i} {' '.join(row)}"
         print(row_str)
@@ -38,7 +38,7 @@ def ask():
             print("Координаты вне диапазона!")
             continue
 
-        if field[x][y] != ' ':
+        if field[x][y] != '-':
             print("Клетка занята!")
             continue
         return x, y
@@ -52,8 +52,8 @@ def check_win():
         for c in cord:
             symbols.append(field[c[0]][c[1]])
         if symbols == ["X", "X", "X"]:
-            print("Выиграл X.")
             show()
+            print("Выиграл X.")
             return True
         if symbols == ["0", "0", "0"]:
             show()
@@ -62,7 +62,7 @@ def check_win():
     return False
 
 greet()
-field = [[" "] * 3 for i in range(3)]
+field = [["-"] * 3 for i in range(3)]
 num = 0
 
 while True:
