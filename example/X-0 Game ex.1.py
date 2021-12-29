@@ -61,7 +61,7 @@ def check_win():
     return False
 
 greet()
-field = [[" "] * 3 for i in range(3) ]
+field = [[" "] * 3 for i in range(3)]
 count = 0
 while True:
     count += 1
